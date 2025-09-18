@@ -24,8 +24,8 @@ export const CityItem = ({
     </Place>
     <Temperature>{temperature}°C</Temperature>
     <WeatherDetails>
-      <Description>{text}</Description>
       <Icon src={`https:${icon}`} alt={text} />
+      <Description>{text}</Description>
     </WeatherDetails>
   </StyledCityItem>
 );

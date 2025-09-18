@@ -9,8 +9,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: ${({theme}) => theme.colors.downriver} ;
-        word-break: break-word;
+        background-color: ${({ theme }) => theme.colors.downriver};
+        font-family: "Nunito", sans-serif;
+        margin: 0 10px;
     }
 
     button {

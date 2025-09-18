@@ -1,9 +1,9 @@
 import { toCurrentWeather } from "../routes"
 import { Logo } from "./Logo"
-import { NavigationBar, NavigationItem, NavigationList, NavigationLink } from "./styled"
+import { BarWrapper, NavigationItem, NavigationList, NavigationLink } from "./styled"
 
 export const Navigation = () => (
-    <NavigationBar>
+    <BarWrapper>
         <Logo/>
         <NavigationList>
             <NavigationItem>
@@ -11,6 +11,11 @@ export const Navigation = () => (
                     current weather
                 </NavigationLink>
             </NavigationItem>
+            <NavigationItem>
+                <NavigationLink to={toCurrentWeather()}>
+                    weather forecast
+                </NavigationLink>
+            </NavigationItem>
         </NavigationList>
-    </NavigationBar>
+    </BarWrapper>
 )
