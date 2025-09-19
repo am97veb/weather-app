@@ -36,10 +36,12 @@ export const NavigationList = styled.ul`
     text-align: right;
     gap: 20px;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     text-align: center;
     margin: 15px 0 5px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 
