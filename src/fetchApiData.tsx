@@ -1,9 +1,8 @@
 import axios from "axios";
-import { sourceApi } from "./sourceApi";
+import { SourceApi } from "./SourceApi";
 import { CityDataProps } from "./types";
 
-export const fetchApiData = async (city: string) => {
-    const response = await axios.get<CityDataProps>(sourceApi(city));
-    return response.data;
-    
+export const fetchApiData = async (city: string, pathname: string) => {
+    const response = await axios.get<CityDataProps>(SourceApi(city, pathname));
+    return response.data; 
 };
