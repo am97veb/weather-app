@@ -382,7 +382,7 @@ Please change the parent <Route path="${h}"> to <Route path="${h==="/"?"*":`${h}
     }
 
     body {
-        background-color: ${({theme:e})=>e.colors.downriver};
+        background-color: ${({theme:e})=>e.colors.black};
         font-family: "Nunito", sans-serif;
         margin: 0 10px;
     }
