@@ -14,8 +14,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools />
-      <Normalize />
       <ThemeProvider theme={theme}>
+        <Normalize />
         <GlobalStyle />
         <App />
       </ThemeProvider>
