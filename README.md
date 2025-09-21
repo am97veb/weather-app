@@ -1,4 +1,103 @@
-# React + TypeScript + Vite
+# 🧾 WeatherApp
+
+## 📖 Description
+
+Hello!
+I would like to present a simple weather application that displays the current weather and the forecast for the coming days.
+In the Current Weather tab, you can find data on the current weather in selected cities, along with a brief description and graphics.
+In the Weather Forecast tab, you can find data on the maximum and minimum temperatures for the coming days.
+The application is very intuitive and responsive, which means that the elements adapt to the screen on which the application is displayed.
+
+Below is the presentation, link to the application, used technologies and available scripts.
+
+## 📌 Table of Contents
+
+1. 🎬 [Presentation](#-presentation)
+2. 🎥 [Demo](#-demo)
+3. 🛠️ [Tech Stack](#-tech-stack)
+4. 📋 [Features](#-features)
+5. ⚙ [Instalation](#-instalation)
+6. 👨🏻‍💻 [Usage](#-usage)
+7. 🧱 [Building for Production](#-bulding-for-production)
+8. 🚀 [Deployment](#-deployment)
+9. 🔧 [React + TypeScript + Vite](#-react-+typescript-vite)
+
+## 🎬 Presentation
+
+![App presentation](./README%20files/appPresentation.gif)
+
+### 📐 Responsive Design
+
+![Responsive Design](./README%20files/responsivePresentation.gif)
+
+## 🎥 Demo
+
+Let's try [WeatherApp](https://am97veb.github.io/weather-app/)!
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: React.js
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Styling**: Styled Components
+- **Data Fetching**: TanStack Query (React Query)
+- **HTTP Client**: Axios
+
+## 📋 Features
+
+- ⛅ Current weather
+- 📅☔ Weather forecast
+- 💻📱 Responsive design
+
+## ⚙ Instalation
+
+Clone the repository:
+
+```
+git clone https://github.com/am97veb/weather-app.git
+```
+
+Navigate to the project directory:
+
+```
+cd weather-app
+```
+
+Install the dependencies:
+
+```
+npm install
+```
+
+## 👨🏻‍💻 Usage
+
+Run the development server:
+
+```
+npm run dev
+```
+
+The application will be available at http://localhost:5173
+
+## 👷🏻‍♂️🧱 Building for Production
+
+Create an optimized production build:
+
+```
+npm run build
+```
+
+The build artifacts will be stored in the dist/ directory.
+
+## 🚀 Deployment
+
+Deployment on GitHub Pages:
+
+```
+npm run deploy
+```
+
+## 🔧 React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -7,7 +106,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+### Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
