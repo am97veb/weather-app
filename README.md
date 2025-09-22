@@ -4,12 +4,12 @@
 
 Hello!
 I would like to present a simple weather application that displays the current weather and the forecast for the coming days.
-The application downloads data from Weatherapi.com and shows info for two cities—Gliwice and Hamburg.
+The application downloads data from Weatherapi.com and shows info for two cities — Gliwice and Hamburg.
 In the Current Weather tab, you can find data on the current weather in selected cities, along with a brief description and graphics.
 In the Weather Forecast tab, you can find data on the maximum and minimum temperatures for the coming days.
 The application is very intuitive and responsive, which means that the elements adapt to the screen on which the application is displayed.
 
-In the near future, we plan to expand the functionality to include searching, adding, and deleting more cities, as well as saving selected cities in LocalStorage.
+In the near future, I plan to expand the functionality to include searching, adding, and deleting more cities, as well as saving selected cities in LocalStorage.
 
 Below is the presentation, link to the application, used technologies and available scripts.
 
