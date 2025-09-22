@@ -15,15 +15,15 @@ Below is the presentation, link to the application, used technologies and availa
 
 ## 📌 Table of Contents
 
-1. 🎬 [Presentation](#presentation)
-2. 🎥 [Demo](#demo)
-3. 🛠️ [Tech Stack](#tech-stack)
-4. 📋 [Features](#features)
-5. ⚙ [Installation](#instalation)
-6. 👨🏻‍💻 [Usage](#usage)
-7. 🧱 [Building for Production](#building-for-production)
-8. 🚀 [Deployment](#deployment)
-9. 🔧 [React + TypeScript + Vite](#react-typescript-vite)
+1. 🎬 [Presentation](#-presentation)
+2. 🎥 [Demo](#-demo)
+3. 🛠️ [Tech Stack](#️-tech-stack)
+4. 📋 [Features](#-features)
+5. ⚙ [Installation](#-installation)
+6. 👨🏻‍💻 [Usage](#-usage)
+7. 🧱 [Building for Production](#️-building-for-production)
+8. 🚀 [Deployment](#-deployment)
+9. 🔧 [React TypeScript Vite](#-react--typescript--vite)
 
 ## 🎬 Presentation
 
