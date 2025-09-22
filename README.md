@@ -4,23 +4,26 @@
 
 Hello!
 I would like to present a simple weather application that displays the current weather and the forecast for the coming days.
+The application downloads data from Weatherapi.com and shows info for two cities—Gliwice and Hamburg.
 In the Current Weather tab, you can find data on the current weather in selected cities, along with a brief description and graphics.
 In the Weather Forecast tab, you can find data on the maximum and minimum temperatures for the coming days.
 The application is very intuitive and responsive, which means that the elements adapt to the screen on which the application is displayed.
+
+In the near future, we plan to expand the functionality to include searching, adding, and deleting more cities, as well as saving selected cities in LocalStorage.
 
 Below is the presentation, link to the application, used technologies and available scripts.
 
 ## 📌 Table of Contents
 
-1. 🎬 [Presentation](#-presentation)
-2. 🎥 [Demo](#-demo)
-3. 🛠️ [Tech Stack](#-tech-stack)
-4. 📋 [Features](#-features)
-5. ⚙ [Instalation](#-instalation)
-6. 👨🏻‍💻 [Usage](#-usage)
-7. 🧱 [Building for Production](#-bulding-for-production)
-8. 🚀 [Deployment](#-deployment)
-9. 🔧 [React + TypeScript + Vite](#-react-+typescript-vite)
+1. 🎬 [Presentation](#presentation)
+2. 🎥 [Demo](#demo)
+3. 🛠️ [Tech Stack](#tech-stack)
+4. 📋 [Features](#features)
+5. ⚙ [Installation](#instalation)
+6. 👨🏻‍💻 [Usage](#usage)
+7. 🧱 [Building for Production](#building-for-production)
+8. 🚀 [Deployment](#deployment)
+9. 🔧 [React + TypeScript + Vite](#react-typescript-vite)
 
 ## 🎬 Presentation
 
@@ -49,7 +52,7 @@ Let's try [WeatherApp](https://am97veb.github.io/weather-app/)!
 - 📅☔ Weather forecast
 - 💻📱 Responsive design
 
-## ⚙ Instalation
+## ⚙ Installation
 
 Clone the repository:
 
