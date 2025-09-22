@@ -21,7 +21,7 @@ Below is the presentation, link to the application, used technologies and availa
 4. 📋 [Features](#-features)
 5. ⚙ [Installation](#-installation)
 6. 👨🏻‍💻 [Usage](#-usage)
-7. 🧱 [Building for Production](#️-building-for-production)
+7. 🧱 [Building for Production](#-building-for-production)
 8. 🚀 [Deployment](#-deployment)
 9. 🔧 [React TypeScript Vite](#-react--typescript--vite)
 
@@ -82,7 +82,7 @@ npm run dev
 
 The application will be available at http://localhost:5173
 
-## 👷🏻‍♂️🧱 Building for Production
+## 🧱 Building for Production
 
 Create an optimized production build:
 
