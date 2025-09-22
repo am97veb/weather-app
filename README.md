@@ -48,9 +48,9 @@ Let's try [WeatherApp](https://am97veb.github.io/weather-app/)!
 
 ## 📋 Features
 
-- ⛅ Current weather
-- 📅☔ Weather forecast
-- 💻📱 Responsive design
+- ⛅ **Current weather** - you can find data on the current weather in selected cities, along with a brief description and graphics.
+- 📅☔ **Weather forecast** - you can find data on the maximum and minimum temperatures for the coming days.
+- 💻📱 **Responsive design** - the elements adapt to the screen on which the application is displayed.
 
 ## ⚙ Installation
 
