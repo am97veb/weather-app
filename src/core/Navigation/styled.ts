@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 export const BarWrapper = styled.div`
   max-width: 1500px;
-  margin: 0 auto;
+  margin: 0 auto 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: auto;
   height: auto;
-  background: white;
+  background: ${({ theme }) => theme.colors.white};;
   border-radius: 0 0 10px 10px;
   padding: 10px 60px 10px 20px;
   box-shadow: -5px 0px 20px -10px ${({ theme }) => theme.colors.boxShadow},
