@@ -1,7 +1,7 @@
 export const theme = {
   colors: {
     downriver: "#0D2555",
-    dodgerBlue: "#28ADF6",
+    dodgerBlue: "#0C97E4",
     black: "#000000",
     boxShadow: "#000000",
     white: "#FFFFFF",
