@@ -7,6 +7,7 @@ import { cities } from "../selectedCities";
 import { Place } from "./Place";
 import { CurrentWeather } from "./CurrentWeather";
 import { WeatherForecast } from "./WeatherForecast";
+import { Search } from "./Search";
 
 export const Weather = () => {
   const { pathname } = useLocation();
@@ -24,6 +25,7 @@ export const Weather = () => {
 
   return (
     <Wrapper>
+      <Search />
       <CityList special={pathname === "/currentWeather" ? false : true}>
         {weatherInCities.map((weather, index) => {
           if (!weather.data) {
@@ -48,7 +50,9 @@ export const Weather = () => {
                   icon={data.current.condition.icon}
                 />
               ) : (
-                <WeatherForecast forecastday={data.forecast?.forecastday || []} />
+                <WeatherForecast
+                  forecastday={data.forecast?.forecastday || []}
+                />
               )}
             </StyledCityItem>
           );

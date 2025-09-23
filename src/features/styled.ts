@@ -5,11 +5,6 @@ import { StyledComponendsProps } from "./types";
 export const Wrapper = styled.div`
   max-width: 1500px;
   margin: 0 auto;
-  padding-top: 50px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
-    padding-top: 20px;
-  }
 `;
 
 export const CityList = styled.ul<StyledComponendsProps>`
