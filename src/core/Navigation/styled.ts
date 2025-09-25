@@ -2,6 +2,9 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const BarWrapper = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 5;
   max-width: 1500px;
   margin: 0 auto 15px;
   display: flex;
