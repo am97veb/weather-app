@@ -15,9 +15,6 @@ export const GlobalStyle = createGlobalStyle`
 
     #root {
         margin: 0 10px;
-    }
-
-    button {
         cursor: pointer;
     }
 `;
