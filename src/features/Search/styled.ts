@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Form = styled.form`
   display: flex;
   gap: 15px;
+  position: relative;
 `;
 
 export const Input = styled.input`
@@ -10,6 +11,7 @@ export const Input = styled.input`
   padding: 10px;
   border-radius: 10px;
   border: none;
+  z-index: 3;
   box-shadow: 0px -5px 20px -10px ${({ theme }) => theme.colors.boxShadow},
     -5px 0px 20px -10px ${({ theme }) => theme.colors.boxShadow},
     5px 0px 20px -10px ${({ theme }) => theme.colors.boxShadow},
@@ -29,4 +31,25 @@ export const Button = styled.button`
   &:hover {
     transform: scale(1.02);
   }
+`;
+
+export const CityList = styled.ul`
+  right: 98px;
+  left: 0;
+  background-color: ${({ theme }) => theme.colors.white};
+  position: absolute;
+  top: 30px;
+  z-index: 2;
+  padding: 10px;
+  list-style: none;
+  border-radius: 10px;
+  border: none;
+  box-shadow: -5px 0px 20px -10px ${({ theme }) => theme.colors.boxShadow},
+    5px 0px 20px -10px ${({ theme }) => theme.colors.boxShadow},
+    0px 5px 20px -10px ${({ theme }) => theme.colors.boxShadow};
+`;
+
+export const CityOption = styled.li`
+  width: 100%;
+  padding: 5px;
 `;
