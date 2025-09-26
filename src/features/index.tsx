@@ -1,19 +1,34 @@
 import { useLocation } from "react-router-dom";
 import { CityList, StyledCityItem, Wrapper } from "./styled";
-import { useManyCitiesWeather } from "../useManyCitiesWeather";
+import { useCitiesWeather } from "../useCitiesWeather";
 import { Loading } from "../common/Loading";
 import { Error } from "../common/Error";
-import { cities } from "../selectedCities";
+
 import { Place } from "./Place";
 import { CurrentWeather } from "./CurrentWeather";
 import { WeatherForecast } from "./WeatherForecast";
 import { Search } from "./Search";
+import { useState } from "react";
+import { weatherEndpoints } from "../weatherEndpoints";
 
 export const Weather = () => {
+  const [cities, setCities] = useState<string[]>([]);
   const { pathname } = useLocation();
-  const weatherInCities = useManyCitiesWeather(cities, pathname);
-  const isLoading = weatherInCities.some((query) => query.isLoading);
-  const error = weatherInCities.some((query) => query.error);
+
+  const endpoint =
+    pathname === "/currentWeather"
+      ? weatherEndpoints.CURRENT
+      : weatherEndpoints.FORECAST;
+
+  const weatherInCities = useCitiesWeather(cities, endpoint);
+  const isLoading = weatherInCities?.some((city) => city.isLoading);
+  const error = weatherInCities?.some((city) => city.error);
+
+  const addCity = (city: string) => {
+    if (!cities.includes(city.toLowerCase())) {
+      setCities([...cities, city.toLowerCase()]);
+    }
+  };
 
   if (isLoading) {
     return <Loading />;
@@ -24,40 +39,44 @@ export const Weather = () => {
   }
 
   return (
-    <Wrapper>
-      <Search />
-      <CityList special={pathname === "/currentWeather" ? false : true}>
-        {weatherInCities.map((weather, index) => {
-          if (!weather.data) {
-            return null;
-          }
-          const data = weather.data;
-
-          return (
-            <StyledCityItem
-              special={pathname === "/currentWeather" ? false : true}
-              key={index}
-            >
-              <Place
-                name={data.location.name}
-                country={data.location.country}
-              />
-              {pathname === "/currentWeather" ? (
-                <CurrentWeather
-                  special={pathname === "/currentWeather" ? false : true}
-                  temperature={data.current.temp_c}
-                  text={data.current.condition.text}
-                  icon={data.current.condition.icon}
+    <>
+      <Search addCity={addCity} />
+      <Wrapper>
+        <CityList special={pathname === "/currentWeather" ? false : true}>
+          {weatherInCities?.map((weather, index) => {
+            if (!weather.data) {
+              return null;
+            }
+            const data = weather.data;
+            if (Array.isArray(data)) {
+              return null;
+            }
+            return (
+              <StyledCityItem
+                special={pathname === "/currentWeather" ? false : true}
+                key={index}
+              >
+                <Place
+                  name={data.location.name}
+                  country={data.location.country}
                 />
-              ) : (
-                <WeatherForecast
-                  forecastday={data.forecast?.forecastday || []}
-                />
-              )}
-            </StyledCityItem>
-          );
-        })}
-      </CityList>
-    </Wrapper>
+                {pathname === "/currentWeather" ? (
+                  <CurrentWeather
+                    special={pathname === "/currentWeather" ? false : true}
+                    temperature={data.current.temp_c}
+                    text={data.current.condition.text}
+                    icon={data.current.condition.icon}
+                  />
+                ) : (
+                  <WeatherForecast
+                    forecastday={data.forecast?.forecastday || []}
+                  />
+                )}
+              </StyledCityItem>
+            );
+          })}
+        </CityList>
+      </Wrapper>
+    </>
   );
 };
