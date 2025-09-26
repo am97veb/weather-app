@@ -1,10 +1,17 @@
-export interface CityDataProps {
+export type FetchDataProps = 
+ | City[]
+ | {
   location: {
     name: string;
     country: string;
   };
   forecast?: WeatherForecast;
   current: CurrentWeather;
+}
+
+export interface City {
+  name: string;
+  id: number;
 }
 
 export interface CurrentWeather {
