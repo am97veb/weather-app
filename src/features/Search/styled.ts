@@ -7,7 +7,9 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
+  max-width: 1500px;
   width: 100%;
+  margin: 0 auto;
   padding: 10px;
   border-radius: 10px;
   border: none;
@@ -16,6 +18,10 @@ export const Input = styled.input`
     -5px 0px 20px -10px ${({ theme }) => theme.colors.boxShadow},
     5px 0px 20px -10px ${({ theme }) => theme.colors.boxShadow},
     0px 5px 20px -10px ${({ theme }) => theme.colors.boxShadow};
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Button = styled.button`

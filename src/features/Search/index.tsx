@@ -1,21 +1,54 @@
 import { FormEventHandler, useState } from "react";
-import { Button, Form, Input } from "./styled";
+import { Button, CityList, CityOption, Form, Input } from "./styled";
 
-export const Search = () => {
-  const [city, setNewCity] = useState("");
+import { AddCityProps } from "./types";
+import { useCitiesWeather } from "../../useCitiesWeather";
+import { weatherEndpoints } from "../../weatherEndpoints";
 
-  const onFormSubmit:FormEventHandler<HTMLFormElement> = (event) => {
+export const Search = ({ addCity }: AddCityProps) => {
+  const [searchedCity, setNewCity] = useState("");
+
+  const searchSuggestions = useCitiesWeather(
+    searchedCity.split(", "),
+    weatherEndpoints.SEARCH
+  );
+
+  const onFormSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
   };
 
   return (
     <Form onSubmit={onFormSubmit}>
       <Input
-        value={city}
-        onChange={({ target }) => setNewCity(target.value)}
+        value={searchedCity}
+        onChange={(event) => setNewCity(event?.target.value)}
         placeholder="Search for a city"
-      ></Input>
-      <Button>add city</Button>
+      />
+      {searchSuggestions.map((searchSuggestion) => {
+
+        if (!searchSuggestion.data) {
+          return null;
+        }
+        const data = searchSuggestion.data;
+        return (
+          <>
+            <CityList>
+              {!Array.isArray(data)
+                ? null
+                : data.map((city) => (
+                      <CityOption
+                        onClick={() => addCity(city.name)}
+                        key={city.id}
+                      >
+                        {city.name}
+                      </CityOption>
+                    )
+                  )}
+            </CityList>
+            <Button onClick={() => addCity(searchedCity)}>add city</Button>
+          </>
+        );
+      })}
     </Form>
   );
 };
