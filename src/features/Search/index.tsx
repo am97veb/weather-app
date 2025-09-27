@@ -1,5 +1,5 @@
 import { FormEventHandler, useState } from "react";
-import { Button, CityList, CityOption, Form, Input } from "./styled";
+import { AddCityButton, SuggestedCitiesList, SuggestedCity, Form, Input } from "./styled";
 
 import { AddCityProps } from "./types";
 import { useCitiesWeather } from "../../useCitiesWeather";
@@ -32,20 +32,20 @@ export const Search = ({ addCity }: AddCityProps) => {
         const data = searchSuggestion.data;
         return (
           <>
-            <CityList>
+            <SuggestedCitiesList>
               {!Array.isArray(data)
                 ? null
                 : data.map((city) => (
-                      <CityOption
+                      <SuggestedCity
                         onClick={() => addCity(city.name)}
                         key={city.id}
                       >
                         {city.name}
-                      </CityOption>
+                      </SuggestedCity>
                     )
                   )}
-            </CityList>
-            <Button onClick={() => addCity(searchedCity)}>add city</Button>
+            </SuggestedCitiesList>
+            <AddCityButton onClick={() => addCity(searchedCity)}>add city</AddCityButton>
           </>
         );
       })}

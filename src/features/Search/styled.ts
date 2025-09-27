@@ -4,10 +4,11 @@ export const Form = styled.form`
   display: flex;
   gap: 15px;
   position: relative;
+  max-width: 1500px;
+  margin: 0 auto;
 `;
 
 export const Input = styled.input`
-  max-width: 1500px;
   width: 100%;
   margin: 0 auto;
   padding: 10px;
@@ -24,7 +25,7 @@ export const Input = styled.input`
   }
 `;
 
-export const Button = styled.button`
+export const AddCityButton = styled.button`
   text-transform: capitalize;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.dodgerBlue};
@@ -39,7 +40,7 @@ export const Button = styled.button`
   }
 `;
 
-export const CityList = styled.ul`
+export const SuggestedCitiesList = styled.ul`
   right: 98px;
   left: 0;
   background-color: ${({ theme }) => theme.colors.white};
@@ -55,7 +56,8 @@ export const CityList = styled.ul`
     0px 5px 20px -10px ${({ theme }) => theme.colors.boxShadow};
 `;
 
-export const CityOption = styled.li`
+export const SuggestedCity = styled.li`
   width: 100%;
   padding: 5px;
+  cursor: pointer;
 `;
