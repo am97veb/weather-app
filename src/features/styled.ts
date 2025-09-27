@@ -28,6 +28,7 @@ export const CityList = styled.ul<StyledComponendsProps>`
 `;
 
 export const StyledCityItem = styled.li<StyledComponendsProps>`
+  position: relative;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -53,7 +54,7 @@ export const StyledCityItem = styled.li<StyledComponendsProps>`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     max-width: 550px;
-    padding: 15px 15px 0;
+    padding: 20px 15px 0;
     width: 100%;
     display: grid;
     gap: 0;
@@ -77,4 +78,19 @@ export const StyledCityItem = styled.li<StyledComponendsProps>`
         padding: 15px 15px 0;
       }
     `}
+`;
+
+export const RemoveCityButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: ${({ theme }) => theme.colors.white};
+  align-self: flex-end;
+  position: absolute;
+  top: 10px;
+  right: 6px;
+
+   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+        top: 4px;
+  right: 0px;
+      }
 `;

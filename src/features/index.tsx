@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { CityList, StyledCityItem, Wrapper } from "./styled";
+import { RemoveCityButton, CityList, StyledCityItem, Wrapper } from "./styled";
 import { useCitiesWeather } from "../useCitiesWeather";
 import { Loading } from "../common/Loading";
 import { Error } from "../common/Error";
@@ -30,6 +30,11 @@ export const Weather = () => {
     }
   };
 
+  const deleteCity = (id: number) => {setCities([
+    ...cities.slice(0, id),
+    ...cities.slice(id + 1)
+  ])};
+
   if (isLoading) {
     return <Loading />;
   }
@@ -56,6 +61,7 @@ export const Weather = () => {
                 special={pathname === "/currentWeather" ? false : true}
                 key={index}
               >
+                <RemoveCityButton onClick={() => deleteCity(index)}>✖</RemoveCityButton>
                 <Place
                   name={data.location.name}
                   country={data.location.country}
