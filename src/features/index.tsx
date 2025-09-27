@@ -3,17 +3,16 @@ import { RemoveCityButton, CityList, StyledCityItem, Wrapper } from "./styled";
 import { useCitiesWeather } from "../useCitiesWeather";
 import { Loading } from "../common/Loading";
 import { Error } from "../common/Error";
-
 import { Place } from "./Place";
 import { CurrentWeather } from "./CurrentWeather";
 import { WeatherForecast } from "./WeatherForecast";
 import { Search } from "./Search";
-import { useState } from "react";
 import { weatherEndpoints } from "../weatherEndpoints";
+import { useCities } from "../useCities";
 
 export const Weather = () => {
-  const [cities, setCities] = useState<string[]>([]);
   const { pathname } = useLocation();
+  const {cities, addCity, deleteCity} = useCities();
 
   const endpoint =
     pathname === "/currentWeather"
@@ -23,17 +22,6 @@ export const Weather = () => {
   const weatherInCities = useCitiesWeather(cities, endpoint);
   const isLoading = weatherInCities?.some((city) => city.isLoading);
   const error = weatherInCities?.some((city) => city.error);
-
-  const addCity = (city: string) => {
-    if (!cities.includes(city.toLowerCase())) {
-      setCities([...cities, city.toLowerCase()]);
-    }
-  };
-
-  const deleteCity = (id: number) => {setCities([
-    ...cities.slice(0, id),
-    ...cities.slice(id + 1)
-  ])};
 
   if (isLoading) {
     return <Loading />;
