@@ -1,6 +1,11 @@
 import { FormEventHandler, useState } from "react";
-import { AddCityButton, SuggestedCitiesList, SuggestedCity, Form, Input } from "./styled";
-
+import {
+  AddCityButton,
+  SuggestedCitiesList,
+  SuggestedCity,
+  Form,
+  Input,
+} from "./styled";
 import { AddCityProps } from "./types";
 import { useCitiesWeather } from "../../useCitiesWeather";
 import { weatherEndpoints } from "../../weatherEndpoints";
@@ -25,7 +30,6 @@ export const Search = ({ addCity }: AddCityProps) => {
         placeholder="Search for a city"
       />
       {searchSuggestions.map((searchSuggestion) => {
-
         if (!searchSuggestion.data) {
           return null;
         }
@@ -36,16 +40,20 @@ export const Search = ({ addCity }: AddCityProps) => {
               {!Array.isArray(data)
                 ? null
                 : data.map((city) => (
-                      <SuggestedCity
-                        onClick={() => addCity(city.name)}
-                        key={city.id}
-                      >
-                        {city.name}
-                      </SuggestedCity>
-                    )
-                  )}
+                    <SuggestedCity
+                      onClick={() => {
+                        addCity(city.name);
+                        setNewCity("");
+                      }}
+                      key={city.id}
+                    >
+                      {city.name}
+                    </SuggestedCity>
+                  ))}
             </SuggestedCitiesList>
-            <AddCityButton onClick={() => addCity(searchedCity)}>add city</AddCityButton>
+            <AddCityButton onClick={() => {addCity(searchedCity); setNewCity("");}}>
+              add city
+            </AddCityButton>
           </>
         );
       })}
