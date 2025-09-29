@@ -1,23 +1,17 @@
 import { useLocation } from "react-router-dom";
-import { RemoveCityButton, CityList, StyledCityItem, Wrapper } from "./styled";
+import { CityList, Wrapper } from "./styled";
 import { useCitiesWeather } from "../useCitiesWeather";
 import { Loading } from "../common/Loading";
 import { Error } from "../common/Error";
-import { Place } from "./Place";
-import { CurrentWeather } from "./CurrentWeather";
-import { WeatherForecast } from "./WeatherForecast";
 import { Search } from "./Search";
-import { weatherEndpoints } from "../weatherEndpoints";
 import { useCities } from "../useCities";
+import { setEndpoint } from "./setEndpoint";
+import { CityItem } from "./CityItem";
 
 export const Weather = () => {
   const { pathname } = useLocation();
-  const {cities, addCity, deleteCity} = useCities();
-
-  const endpoint =
-    pathname === "/currentWeather"
-      ? weatherEndpoints.CURRENT
-      : weatherEndpoints.FORECAST;
+  const { cities, addCity, deleteCity } = useCities();
+  const endpoint = setEndpoint();
 
   const weatherInCities = useCitiesWeather(cities, endpoint);
   const isLoading = weatherInCities?.some((city) => city.isLoading);
@@ -40,33 +34,13 @@ export const Weather = () => {
             if (!weather.data) {
               return null;
             }
-            const data = weather.data;
-            if (Array.isArray(data)) {
-              return null;
-            }
             return (
-              <StyledCityItem
-                special={pathname === "/currentWeather" ? false : true}
+              <CityItem
                 key={index}
-              >
-                <RemoveCityButton onClick={() => deleteCity(index)}>✖</RemoveCityButton>
-                <Place
-                  name={data.location.name}
-                  country={data.location.country}
-                />
-                {pathname === "/currentWeather" ? (
-                  <CurrentWeather
-                    special={pathname === "/currentWeather" ? false : true}
-                    temperature={data.current.temp_c}
-                    text={data.current.condition.text}
-                    icon={data.current.condition.icon}
-                  />
-                ) : (
-                  <WeatherForecast
-                    forecastday={data.forecast?.forecastday || []}
-                  />
-                )}
-              </StyledCityItem>
+                data={weather.data}
+                isCurrent={pathname === "/currentWeather"}
+                onDelete={deleteCity}
+              />
             );
           })}
         </CityList>
