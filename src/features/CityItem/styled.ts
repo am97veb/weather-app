@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { StyledComponendsProps } from "../types";
-import background from "../assets/sky.jpg";
+import background from "../../assets/sky.jpg";
 
 export const StyledCityItem = styled.li<StyledComponendsProps>`
   position: relative;

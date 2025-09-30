@@ -2,7 +2,7 @@ import { FetchDataProps } from "../../types";
 
 export interface CityItemProps {
   key: number;
-  isCurrent: boolean;
+  isForecast: boolean;
   data: FetchDataProps;
   onDelete: (id: number) => void;
 }

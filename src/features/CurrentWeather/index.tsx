@@ -11,7 +11,9 @@ export const CurrentWeather = ({
   text,
   icon,
   special,
-}: CurrentWeatherProps) => (
+}: CurrentWeatherProps) => {
+
+  return (
   <>
     <CurrentTemperature special={special}>{temperature}°C</CurrentTemperature>
     <WeatherDetails special={special}>
@@ -20,3 +22,4 @@ export const CurrentWeather = ({
     </WeatherDetails>
   </>
 );
+}

@@ -29,7 +29,7 @@ export const Weather = () => {
     <>
       <Search addCity={addCity} />
       <Wrapper>
-        <CityList special={pathname === "/currentWeather" ? false : true}>
+        <CityList special={pathname !== "/currentWeather"}>
           {weatherInCities?.map((weather, index) => {
             if (!weather.data) {
               return null;
@@ -38,7 +38,7 @@ export const Weather = () => {
               <CityItem
                 key={index}
                 data={weather.data}
-                isCurrent={pathname === "/currentWeather"}
+                isForecast={pathname !== "/currentWeather"}
                 onDelete={deleteCity}
               />
             );
