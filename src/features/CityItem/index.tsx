@@ -4,13 +4,13 @@ import { WeatherForecast } from "../WeatherForecast";
 import { Place } from "../Place";
 import { CityItemProps } from "./types";
 
-export const CityItem = ({ key, isForecast, data, onDelete }: CityItemProps) => {
+export const CityItem = ({ id, isForecast, data, onDelete }: CityItemProps) => {
   if (Array.isArray(data)) {
     return null;
   }
   return (
-    <StyledCityItem special={isForecast} key={key}>
-      <RemoveCityButton onClick={() => onDelete(key)}>✖</RemoveCityButton>
+    <StyledCityItem special={isForecast}>
+      <RemoveCityButton onClick={() => onDelete(id)}>✖</RemoveCityButton>
       <Place name={data.location.name} country={data.location.country} />
       {!isForecast ? (
         <CurrentWeather

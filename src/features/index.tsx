@@ -36,7 +36,7 @@ export const Weather = () => {
             }
             return (
               <CityItem
-                key={index}
+                id={index}
                 data={weather.data}
                 isForecast={pathname !== "/currentWeather"}
                 onDelete={deleteCity}
