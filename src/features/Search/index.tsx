@@ -30,28 +30,39 @@ export const Search = ({ addCity }: AddCityProps) => {
         placeholder="Search for a city"
       />
       {searchSuggestions.map((searchSuggestion) => {
-        if (!searchSuggestion.data) {
+        const data = searchSuggestion.data;
+        if (!data) {
           return null;
         }
-        const data = searchSuggestion.data;
+        if (!Array.isArray(data)) {
+          return null;
+        }
+
+        const isThisCity = data.some(
+          (city) => city.name.toLowerCase() === searchedCity
+        );
+
         return (
           <>
             <SuggestedCitiesList>
-              {!Array.isArray(data)
-                ? null
-                : data.map((city) => (
-                    <SuggestedCity
-                      onClick={() => {
-                        addCity(city.name);
-                        setNewCity("");
-                      }}
-                      key={city.id}
-                    >
-                      {city.name}
-                    </SuggestedCity>
-                  ))}
+              {data.map((city) => (
+                <SuggestedCity
+                  onClick={() => {
+                    addCity(city.name);
+                    setNewCity("");
+                  }}
+                  key={city.id}
+                >
+                  {city.name}
+                </SuggestedCity>
+              ))}
             </SuggestedCitiesList>
-            <AddCityButton onClick={() => {addCity(searchedCity); setNewCity("");}}>
+            <AddCityButton
+              type="button"
+              onClick={() =>
+                isThisCity && (addCity(searchedCity), setNewCity(""))
+              }
+            >
               add city
             </AddCityButton>
           </>
