@@ -1,25 +1,16 @@
-import {
-  CurrentTemperature,
-  Description,
-  Icon,
-  WeatherDetails,
-} from "./styled";
+import { WeatherDetails } from "../WeatherDetails";
+import { CurrentTemperature } from "./styled";
 import { CurrentWeatherProps } from "./types";
 
 export const CurrentWeather = ({
   temperature,
   text,
   icon,
-  special,
 }: CurrentWeatherProps) => {
-
   return (
-  <>
-    <CurrentTemperature special={special}>{temperature}°C</CurrentTemperature>
-    <WeatherDetails special={special}>
-      <Icon src={`https:${icon}`} alt={text} />
-      <Description>{text}</Description>
-    </WeatherDetails>
-  </>
-);
-}
+    <>
+      <CurrentTemperature>{temperature}°C</CurrentTemperature>
+      <WeatherDetails text={text} icon={icon} />
+    </>
+  );
+};
