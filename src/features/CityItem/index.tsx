@@ -20,7 +20,10 @@ export const CityItem = ({ id, isForecast, data, onDelete }: CityItemProps) => {
           icon={data.current.condition.icon}
         />
       ) : (
-        <WeatherForecast forecastday={data.forecast?.forecastday || []} />
+        <WeatherForecast
+          forecastday={data.forecast?.forecastday || []}
+          special={isForecast}
+        />
       )}
     </StyledCityItem>
   );

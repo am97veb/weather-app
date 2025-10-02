@@ -35,7 +35,7 @@ export const StyledCityItem = styled.li<StyledComponendsProps>`
     gap: 0;
     grid-template-areas:
       "place temperature"
-      "details details";
+      "details  weatherDetails";
   }
 
   ${({ special }) =>
@@ -43,14 +43,14 @@ export const StyledCityItem = styled.li<StyledComponendsProps>`
     css`
       max-width: 1500px;
       background-size: cover;
-      display: grid;
 
-      @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+      @media (max-width: ${({ theme }) => theme.breakpoints.lg}px) {
         display: flex;
+        background-size: auto 572px;
       }
 
       @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
-        padding: 15px 15px 0;
+        padding: 15px 15px 10px;
       }
     `}
 `;
@@ -64,8 +64,8 @@ export const RemoveCityButton = styled.button`
   top: 10px;
   right: 6px;
 
-   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
-        top: 4px;
-  right: 0px;
-      }
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    top: 4px;
+    right: 0px;
+  }
 `;
