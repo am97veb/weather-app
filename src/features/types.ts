@@ -1,3 +1,4 @@
 export interface StyledComponendsProps {
-    special: boolean;
+    special?: boolean;
+    minimumTemperature?: boolean;
 }
