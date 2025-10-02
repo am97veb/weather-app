@@ -39,7 +39,7 @@ export const Search = ({ addCity }: AddCityProps) => {
         }
 
         const isThisCity = data.some(
-          (city) => city.name.toLowerCase() === searchedCity
+          (city) => city.name.toLowerCase() === searchedCity.toLowerCase()
         );
 
         return (
