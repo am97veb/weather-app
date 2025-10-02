@@ -1,4 +1,4 @@
-import { WeatherDetails } from "../WeatherDetails";
+import { WeatherDescription } from "../WeatherDescription";
 import { CurrentTemperature } from "./styled";
 import { CurrentWeatherProps } from "./types";
 
@@ -10,7 +10,7 @@ export const CurrentWeather = ({
   return (
     <>
       <CurrentTemperature>{temperature}°C</CurrentTemperature>
-      <WeatherDetails text={text} icon={icon} />
+      <WeatherDescription text={text} icon={icon} />
     </>
   );
 };

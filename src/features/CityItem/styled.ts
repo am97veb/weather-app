@@ -35,7 +35,7 @@ export const StyledCityItem = styled.li<StyledComponendsProps>`
     gap: 0;
     grid-template-areas:
       "place temperature"
-      "details  weatherDetails";
+      "details  weatherDescription";
   }
 
   ${({ special }) =>

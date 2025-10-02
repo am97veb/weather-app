@@ -1,11 +1,11 @@
 import { Wrapper, Description, Icon } from "./styled";
-import { WeatherDetailsProps } from "./types";
+import { WeatherDescriptionProps } from "./types";
 
-export const WeatherDetails = ({
+export const WeatherDescription = ({
   icon,
   text,
   special,
-}: WeatherDetailsProps) => (
+}: WeatherDescriptionProps) => (
   <Wrapper special={special}>
     <Icon src={`https:${icon}`} alt={text} special={special} />
     <Description special={special}>{text}</Description>

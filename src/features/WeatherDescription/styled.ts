@@ -3,7 +3,7 @@ import { StyledComponendsProps } from "../types";
 
 export const Wrapper = styled.div<StyledComponendsProps>`
   display: flex;
-  grid-area: weatherDetails;
+  grid-area: weatherDescription;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     justify-self: end;

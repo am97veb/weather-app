@@ -25,7 +25,7 @@ export const MaximumMinimumTemperatureHeader = styled.div`
 export const Forecast = styled(MaximumMinimumTemperatureHeader)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "date weatherDetails maximumTemperature minimumTemperature";
+  grid-template-areas: "date weatherDescription maximumTemperature minimumTemperature";
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
     margin: 0 0 10px;

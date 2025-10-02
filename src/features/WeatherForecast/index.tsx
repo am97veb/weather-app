@@ -9,7 +9,7 @@ import {
 } from "./styled";
 import { WeatherForecastProps } from "./types";
 import { dateFormatter } from "../../common/dataFormatter";
-import { WeatherDetails } from "../WeatherDetails";
+import { WeatherDescription } from "../WeatherDescription";
 
 export const WeatherForecast = ({
   forecastday,
@@ -25,7 +25,7 @@ export const WeatherForecast = ({
       : forecastday.map((day) => (
           <Forecast as="li">
             <Day>{dateFormatter(day.date)}</Day>
-            <WeatherDetails
+            <WeatherDescription
               icon={day.day.condition.icon}
               text={day.day.condition.text}
               special={special}
