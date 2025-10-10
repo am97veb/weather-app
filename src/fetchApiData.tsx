@@ -14,6 +14,7 @@ export const fetchApiData = async (city: string, endpoint: string) => {
     params: { 
         q: city,
         days: "3",
+        aqi: "yes",
     },
   });
   return response.data;
