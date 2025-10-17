@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
 export const DetailsList = styled.ul`
   list-style: none;
   padding: 0;
+  margin-bottom: 0;
 `;
 
 export const Detail = styled.li`
