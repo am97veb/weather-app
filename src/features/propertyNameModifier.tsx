@@ -8,6 +8,8 @@ export const propertyNameModifier = (property: string, title: string) => {
         .replaceAll("_", ".");
     case title.includes("sun and moon"):
       return property.replaceAll("_", " ");
+    case title.includes("uv"):
+      return property.replace("uv", "UV");
 
     default:
       return property;
