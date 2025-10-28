@@ -1,15 +1,17 @@
-import { RemoveCityButton, StyledCityItem } from "./styled";
+import { RemoveCityButton, StyledCityItem, StyledLink } from "./styled";
 import { CurrentWeather } from "../CurrentWeather";
 import { WeatherForecast } from "../WeatherForecast";
 import { Place } from "../Place";
 import { CityItemProps } from "./types";
+import { toWeatherDetails } from "../../core/routes";
 
 export const CityItem = ({ id, isForecast, data, onDelete }: CityItemProps) => {
   if (Array.isArray(data)) {
     return null;
   }
   return (
-    <StyledCityItem special={isForecast}>
+    <StyledCityItem special={isForecast} >
+      <StyledLink to={ toWeatherDetails(data.location.name)} >
       <RemoveCityButton onClick={() => onDelete(id)}>✖</RemoveCityButton>
       <Place name={data.location.name} country={data.location.country} />
       {!isForecast ? (
@@ -25,6 +27,7 @@ export const CityItem = ({ id, isForecast, data, onDelete }: CityItemProps) => {
           special={isForecast}
         />
       )}
+      </StyledLink>
     </StyledCityItem>
   );
 };

@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { StyledComponendsProps } from "../types";
 import background from "../../assets/sky.jpg";
+import { Link } from "react-router-dom";
 
 export const StyledCityItem = styled.li<StyledComponendsProps>`
   position: relative;
@@ -35,7 +36,7 @@ export const StyledCityItem = styled.li<StyledComponendsProps>`
     gap: 0;
     grid-template-areas:
       "place temperature"
-      "details  weatherDescription";
+      "details weatherDescription";
   }
 
   ${({ special }) =>
@@ -53,6 +54,12 @@ export const StyledCityItem = styled.li<StyledComponendsProps>`
         padding: 15px 15px 10px;
       }
     `}
+`;
+
+export const StyledLink = styled(Link)`
+ display: contents;
+ color: inherit;
+ width: 100%;
 `;
 
 export const RemoveCityButton = styled.button`
