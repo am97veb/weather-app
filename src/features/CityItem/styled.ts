@@ -36,11 +36,11 @@ export const StyledCityItem = styled.li<StyledComponendsProps>`
     gap: 0;
     grid-template-areas:
       "place temperature"
-      "details weatherDescription";
+      "weatherDescription weatherDescription";
   }
 
-  ${({ special }) =>
-    special &&
+  ${({ forecastView }) =>
+    forecastView &&
     css`
       max-width: 1500px;
       background-size: cover;
@@ -57,9 +57,9 @@ export const StyledCityItem = styled.li<StyledComponendsProps>`
 `;
 
 export const StyledLink = styled(Link)`
- display: contents;
- color: inherit;
- width: 100%;
+  display: contents;
+  color: inherit;
+  width: 100%;
 `;
 
 export const RemoveCityButton = styled.button`

@@ -10,23 +10,23 @@ export const CityItem = ({ id, isForecast, data, onDelete }: CityItemProps) => {
     return null;
   }
   return (
-    <StyledCityItem special={isForecast} >
-      <StyledLink to={ toWeatherDetails(data.location.name)} >
-      <RemoveCityButton onClick={() => onDelete(id)}>✖</RemoveCityButton>
-      <Place name={data.location.name} country={data.location.country} />
-      {!isForecast ? (
-        <CurrentWeather
-          special={isForecast}
-          temperature={data.current.temp_c}
-          text={data.current.condition.text}
-          icon={data.current.condition.icon}
-        />
-      ) : (
-        <WeatherForecast
-          forecastday={data.forecast?.forecastday || []}
-          special={isForecast}
-        />
-      )}
+    <StyledCityItem forecastView={isForecast}>
+      <StyledLink to={toWeatherDetails({ name: data.location.name })}>
+        <RemoveCityButton onClick={() => onDelete(id)}>✖</RemoveCityButton>
+        <Place name={data.location.name} country={data.location.country} />
+        {!isForecast ? (
+          <CurrentWeather
+            forecastView={isForecast}
+            temperature={data.current.temp_c}
+            text={data.current.condition.text}
+            icon={data.current.condition.icon}
+          />
+        ) : (
+          <WeatherForecast
+            forecastday={data.forecast?.forecastday || []}
+            forecastView={isForecast}
+          />
+        )}
       </StyledLink>
     </StyledCityItem>
   );
