@@ -6,11 +6,12 @@ export const CurrentWeather = ({
   temperature,
   text,
   icon,
+  bigTile,
 }: CurrentWeatherProps) => {
   return (
     <>
       <CurrentTemperature>{temperature}°C</CurrentTemperature>
-      <WeatherDescription text={text} icon={icon} />
+      <WeatherDescription text={text} icon={icon} bigTile={bigTile} />
     </>
   );
 };
