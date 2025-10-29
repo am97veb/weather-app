@@ -16,8 +16,8 @@ export const CityList = styled.ul<StyledComponendsProps>`
     gap: 10px;
   }
 
-  ${({ special }) =>
-    special &&
+  ${({ forecastView }) =>
+    forecastView &&
     css`
       padding-left: 0;
       display: grid;

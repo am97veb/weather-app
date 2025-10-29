@@ -29,7 +29,7 @@ export const Weather = () => {
     <>
       <Search addCity={addCity} />
       <Wrapper>
-        <CityList special={pathname !== "/currentWeather"}>
+        <CityList forecastView={pathname !== "/currentWeather"}>
           {weatherInCities?.map((weather, index) => {
             if (!weather.data) {
               return null;
@@ -45,6 +45,6 @@ export const Weather = () => {
           })}
         </CityList>
       </Wrapper>
-    </>
+    </>      
   );
 };
