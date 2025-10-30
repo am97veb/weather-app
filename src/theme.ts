@@ -5,14 +5,16 @@ export const theme = {
     black: "#000000",
     boxShadow: "#000000",
     white: "#FFFFFF",
-    starDust: "#9F9F9D"
+    transparentWhite: "#FFFFFF33",
+    borderWhite: "#FFFFFF6b",
+    starDust: "#9F9F9D",
   },
   breakpoints: {
     sm: 576,
     md: 768,
     lg: 992,
-
-
+    xl: 1200,
+    xxl: 1400,
   },
   fonts: {
     sm: 18,
@@ -22,5 +24,5 @@ export const theme = {
     xxl: 34,
     xxxl: 46,
     huge: 60,
-  }
-} as const ;
+  },
+} as const;
