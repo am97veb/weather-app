@@ -9,8 +9,8 @@ export const Wrapper = styled.div<StyledComponendsProps>`
     justify-self: end;
   }
 
-  ${({ special }) =>
-    special &&
+  ${({ forecastView }) =>
+    forecastView &&
     css`
       margin-bottom: -6px;
 
@@ -35,12 +35,21 @@ export const Description = styled.p<StyledComponendsProps>`
     justify-self: flex-end;
   }
 
-  ${({ special }) =>
-    special &&
+  ${({ forecastView }) =>
+    forecastView &&
     css`
       @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
         font-size: 2.5vw;
       }
+      
+      @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+        display: none;
+      }
+    `}
+
+  ${({ bigTile }) =>
+    bigTile &&
+    css`
       @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
         display: none;
       }
@@ -48,18 +57,16 @@ export const Description = styled.p<StyledComponendsProps>`
 `;
 
 export const Icon = styled.img<StyledComponendsProps>`
-
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     width: 50px;
     order: 2;
   }
 
-  ${({ special }) =>
-    special &&
+  ${({ forecastView }) =>
+    forecastView &&
     css`
       align-self: center;
       width: 50px;
-      height: auto;
 
       @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
         width: 46px;
