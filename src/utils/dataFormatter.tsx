@@ -9,9 +9,4 @@ export const dateToHour = (date: string) =>
   });
 
 export const dateToCompare = (date: string | Date) =>
-  new Date(date).toLocaleTimeString(undefined, {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "numeric",
-  });
+  new Date(date).getTime();
