@@ -15,16 +15,21 @@ export const MaximumMinimumTemperatureHeader = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}px) {
     margin: 0 30px 15px 0;
+    grid-template-columns: 200px 1fr 150px 150px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
     margin: 0;
+    grid-template-columns: 150px 1fr 100px 100px;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    grid-template-columns: 100px 1fr 1fr 1fr;
   }
 `;
 
 export const Forecast = styled(MaximumMinimumTemperatureHeader)`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas: "date weatherDescription maximumTemperature minimumTemperature";
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
@@ -50,13 +55,10 @@ export const Day = styled.p`
 `;
 
 export const ForecastTemperature = styled.div<StyledComponendsProps>`
-  margin: 0;
-  font-size: ${({ theme }) => theme.fonts.xl}px;
-  align-self: center;
-  grid-area: maximumTemperature;
   font-size: ${({ theme }) => theme.fonts.xxl}px;
   margin: 0 0 -4px 0;
   align-self: center;
+  grid-area: maximumTemperature;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}px) {
     font-size: ${({ theme }) => theme.fonts.lg}px;

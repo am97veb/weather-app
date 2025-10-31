@@ -8,12 +8,12 @@ import {
   MinimumShortcut,
 } from "./styled";
 import { WeatherForecastProps } from "./types";
-import { dateFormatter } from "../../common/dataFormatter";
+import { dateToWeekday } from "../../utils/dataFormatter";
 import { WeatherDescription } from "../WeatherDescription";
 
 export const WeatherForecast = ({
   forecastday,
-  special,
+  forecastView,
 }: WeatherForecastProps) => (
   <ForecastWrapper>
     <MaximumMinimumTemperatureHeader>
@@ -24,11 +24,11 @@ export const WeatherForecast = ({
       ? null
       : forecastday.map((day) => (
           <Forecast as="li">
-            <Day>{dateFormatter(day.date)}</Day>
+            <Day>{dateToWeekday(day.date)}</Day>
             <WeatherDescription
               icon={day.day.condition.icon}
               text={day.day.condition.text}
-              special={special}
+              forecastView={forecastView}
             />
             <ForecastTemperature>{day.day.maxtemp_c}°C</ForecastTemperature>
             <ForecastTemperature minimumTemperature>
