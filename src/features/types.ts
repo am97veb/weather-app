@@ -5,6 +5,6 @@ export interface StyledComponendsProps {
     mediumTile?: boolean;
     bigTile?: boolean;
     gridArea?: string;
-    left: boolean;
-    right: boolean;
+    left?: boolean;
+    right?: boolean;
 }
