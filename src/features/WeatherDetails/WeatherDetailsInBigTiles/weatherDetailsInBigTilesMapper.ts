@@ -1,15 +1,15 @@
-import { WeatherDetailsInBigTilesProps } from "./types";
+import { SunMoonMapperProps, WindMapperProps } from "./types";
 
-export const mapWindData = ({current}: WeatherDetailsInBigTilesProps) => ({
-  wind: current.wind_kph,
-  direction: `${current.wind_degree}° ${current.wind_dir}`,
+export const mapWindData = ({currentWeather}: WindMapperProps) => ({
+  wind: currentWeather.wind_kph,
+  direction: `${currentWeather.wind_degree}° ${currentWeather.wind_dir}`,
 });
 
-export const mapSunAndMoonData = ({forecast}: WeatherDetailsInBigTilesProps) => ({
-  sunrise: forecast.forecastday[0].astro.sunrise,
-  sunset: forecast.forecastday[0].astro.sunset,
-  moonrise: forecast.forecastday[0].astro.moonrise,
-  moonset: forecast.forecastday[0].astro.moonset,
-  "moon phase": forecast.forecastday[0].astro.moon_phase,
-  "moon illumination": forecast.forecastday[0].astro.moon_illumination,
+export const mapSunAndMoonData = ({forecastWeather}: SunMoonMapperProps) => ({
+  sunrise: forecastWeather.forecastday[0].astro.sunrise,
+  sunset: forecastWeather.forecastday[0].astro.sunset,
+  moonrise: forecastWeather.forecastday[0].astro.moonrise,
+  moonset: forecastWeather.forecastday[0].astro.moonset,
+  "moon phase": forecastWeather.forecastday[0].astro.moon_phase,
+  "moon illumination": forecastWeather.forecastday[0].astro.moon_illumination,
 });

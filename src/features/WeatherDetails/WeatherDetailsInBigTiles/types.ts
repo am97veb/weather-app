@@ -1,6 +1,9 @@
-import { CurrentWeatherProps, WeatherForecast } from "../../../types";
+import { CurrentWeatherProps, WeatherForecastProps } from "../../../types";
 
 export interface WeatherDetailsInBigTilesProps {
-  current: CurrentWeatherProps;
-  forecast: WeatherForecast;
+  currentWeather: CurrentWeatherProps;
+  forecastWeather: WeatherForecastProps;
 }
+
+export type WindMapperProps = Pick<WeatherDetailsInBigTilesProps, "currentWeather">;
+export type SunMoonMapperProps = Pick<WeatherDetailsInBigTilesProps, "forecastWeather">

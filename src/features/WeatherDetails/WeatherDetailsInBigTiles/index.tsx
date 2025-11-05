@@ -7,20 +7,20 @@ import {
 } from "./weatherDetailsInBigTilesMapper";
 
 export const WeatherDetailsInBigTiles = (
-  data: WeatherDetailsInBigTilesProps
+  {currentWeather, forecastWeather}: WeatherDetailsInBigTilesProps
 ) => (
   <>
     <Tile
       title={"air quality"}
-      data={data.current.air_quality}
+      data={currentWeather.air_quality}
       unit={" μg/m3"}
       gridArea="air"
     />
     <Wrapper>
-      <Tile data={mapWindData(data)} unit={" m/s"} gridArea="wind" />
+      <Tile data={mapWindData({currentWeather})} unit={" m/s"} gridArea="wind" />
       <Tile
         title={"sun and moon"}
-        data={mapSunAndMoonData(data)}
+        data={mapSunAndMoonData({forecastWeather})}
         unit={" %"}
         gridArea="sunAndMoon"
       />
