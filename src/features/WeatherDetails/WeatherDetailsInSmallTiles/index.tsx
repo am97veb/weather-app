@@ -5,10 +5,10 @@ import { SmallTilesWrapper } from "./styled";
 import { WeatherDetailsInSmallTilesProps } from "./types";
 
 export const WeatherDetailsInSmallTiles = (
-  data: WeatherDetailsInSmallTilesProps
+  {currentWeather}: WeatherDetailsInSmallTilesProps
 ) => (
   <SmallTilesWrapper>
-    {Object.entries(mapWeatherDetailsInSmallTiles(data)).map(
+    {Object.entries(mapWeatherDetailsInSmallTiles({currentWeather})).map(
       ([property, value]) => (
         <Tile
           title={propertyNameModifier(property, property)}
