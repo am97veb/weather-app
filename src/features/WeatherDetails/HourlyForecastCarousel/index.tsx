@@ -1,5 +1,5 @@
-import { dateToHour } from "../../utils/dataFormatter";
-import { Tile } from "../Tile/index.";
+import { dateToHour } from "../../../utils/dataFormatter";
+import { Tile } from "../../Tile/index.";
 import { showForecastFromCurrentHour } from "./showForecastFromCurrentHour";
 import {
   CarouselButton,
@@ -14,8 +14,10 @@ import { mapHourlyForecast } from "./hourlyForecastMapper";
 import { useCarouselScroll } from "./useCarouselScroll";
 import { HourlyForecastCarouselProps } from "./types";
 
-export const HourlyForecastCarousel = ({ data }: HourlyForecastCarouselProps) => {
-  const hoursFromNow = showForecastFromCurrentHour(data);
+export const HourlyForecastCarousel = ({
+  forecastWeather,
+}: HourlyForecastCarouselProps) => {
+  const hoursFromNow = showForecastFromCurrentHour({ forecastWeather });
   const { goToLeft, goToRight, carouselRef } = useCarouselScroll();
 
   return (

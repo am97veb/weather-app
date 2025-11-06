@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import Arrow from "../../assets/arrow.svg?react";
-import { StyledComponendsProps } from "../types";
+import Arrow from "../../../assets/arrow.svg?react";
+import { StyledComponendsProps } from "../../types";
 
 export const HourlyCarouselWrapper = styled.div`
   position: relative;
