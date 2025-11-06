@@ -1,4 +1,4 @@
-export const propertyNameModifier = (property: string, title: string) => {
+export const weatherDetailsNamesModifier = (property: string, title: string) => {
   switch (true) {
     case title.includes("air"):
       return property
