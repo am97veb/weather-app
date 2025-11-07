@@ -1,7 +1,7 @@
-import { AirQualityProps, ForecastAstro } from "../../types";
+import { FetchDataProps } from "../../types";
 
 export interface TileProps {
-  data?: AirQualityProps | ForecastAstro;
+  data?: FetchDataProps | MappedData;
   unit?: string;
   title?: string;
   value?: string | number;
@@ -9,3 +9,5 @@ export interface TileProps {
   mediumTile?: boolean;
   gridArea?: string;
 }
+
+export type MappedData = Record<string, string | number>;

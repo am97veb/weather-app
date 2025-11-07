@@ -1,5 +1,5 @@
-import { propertyNameModifier } from "../propertyNameModifier";
-import { checkKey } from "../airQualityValueToText";
+import { weatherDetailsNamesModifier } from "../WeatherDetails/weatherDetailsNamesModifier";
+import { checkKey } from "../WeatherDetails/WeatherDetailsInBigTiles/airQualityValueToText";
 import {
   Wrapper,
   Detail,
@@ -33,7 +33,7 @@ export const Tile = ({
             return (
               <Detail>
                 <Caption mediumTile={mediumTile}>
-                  {title ? propertyNameModifier(property, title) : property}
+                  {title ? weatherDetailsNamesModifier(property, title) : property}
                 </Caption>
                 <Value>
                   {modifiedValue}
