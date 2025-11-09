@@ -1,6 +1,6 @@
-import { ForecastDay } from "../../types";
+import { ForecastDayProps } from "../../types";
 
 export interface WeatherForecastProps {
-  forecastday?: ForecastDay[];
+  forecastday?: ForecastDayProps[];
   forecastView?: boolean;
 }
