@@ -12,11 +12,22 @@ import { useCitiesWeather } from "../../useCitiesWeather";
 import { setEndpoint } from "../setEndpoint";
 import { WeatherDetailsInSmallTiles } from "./WeatherDetailsInSmallTiles";
 import { WeatherDetailsInBigTiles } from "./WeatherDetailsInBigTiles";
+import { Loading } from "../../common/Loading";
+import { Error } from "../../common/Error";
 
 export const WeatherDetails = () => {
   const { name } = useParams<{ name: string }>();
   const endpoint = setEndpoint();
   const weatherInCity = useCitiesWeather(name ? [name] : [], endpoint);
+  const cityData = weatherInCity[0];
+
+  if (cityData.isLoading) {
+      return <Loading />;
+    }
+  
+    if (cityData.error) {
+      return <Error />;
+    }
 
   return (
     <>
