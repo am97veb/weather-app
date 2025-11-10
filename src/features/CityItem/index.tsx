@@ -11,8 +11,8 @@ export const CityItem = ({ id, isForecast, data, onDelete }: CityItemProps) => {
   }
   return (
     <StyledCityItem forecastView={isForecast}>
+      <RemoveCityButton onClick={() => onDelete(id)}>✖</RemoveCityButton>
       <StyledLink to={toWeatherDetails({ name: data.location.name })}>
-        <RemoveCityButton onClick={() => onDelete(id)}>✖</RemoveCityButton>
         <Place name={data.location.name} country={data.location.country} />
         {!isForecast ? (
           <CurrentWeather
