@@ -3,15 +3,18 @@
 ## 📖 Description
 
 Hello!
-I would like to present a simple weather application that displays the current weather and the forecast for the coming days.
-The application downloads data from Weatherapi.com and shows info for two cities — Gliwice and Hamburg.
-In the Current Weather tab, you can find data on the current weather in selected cities, along with a brief description and graphics.
-In the Weather Forecast tab, you can find data on the maximum and minimum temperatures for the coming days.
-The application is very intuitive and responsive, which means that the elements adapt to the screen on which the application is displayed.
+I would like to present a simple weather app that displays the current weather and forecast for the coming days.
 
-In the near future, I plan to expand the functionality to include searching, adding, and deleting more cities, as well as saving selected cities in LocalStorage.
+You can find any location using the search bar. Just start typing the name of the city you want, and a list of suggested locations will appear. Then, use the “add city” button to add the city to the main screen to see the weather. You can remove a tile by clicking the cross in the upper-right corner.
 
-Below is the presentation, link to the application, used technologies and available scripts.
+In the “Current weather” tab, you can find data on the current weather in selected cities, along with a short description and graphics.
+In the “Weather Forecast” tab, you can find data on the maximum and minimum temperatures for the coming days.
+In both tabs, just click on the tile to see detailed weather data such as pressure, visibility, humidity, chances of rain and snow, wind data, sunrise and sunset times, and moon phases. Detailed data on air composition and quality is also available. 
+
+The app is very intuitive and responsive, which means that the elements adapt to the screen on which it is displayed. 
+The app retrieves data from Weatherapi.com, and the cities added to the home screen are saved in local storage.
+
+Below is a presentation, a link to the app, the technologies used, and the available scripts.
 
 ## 📌 Table of Contents
 
@@ -27,11 +30,28 @@ Below is the presentation, link to the application, used technologies and availa
 
 ## 🎬 Presentation
 
-![App presentation](./README%20files/appPresentation.gif)
+Adding cities and current weather: 
+
+![Adding Cities And Current Weather](./README%20files/addNewCity.gif)
+
+Weather forecast and city removal: 
+
+![Weather Forecast And City Removal](./README%20files/weatherForecastAndDeleteCities.gif)
+
+Weather details:
+
+![Weather Details](./README%20files/weatherDetails.gif)
+
 
 ### 📐 Responsive Design
 
-![Responsive Design](./README%20files/responsivePresentation.gif)
+Current and forecast responsive view:
+
+![Current And Forecast Responsive View](./README%20files/currentAndForecastResponsive.gif)
+
+Weather details responsive view:
+
+![Weather Details Responsive View](./README%20files/weatherDetailsResponsive.gif)
 
 ## 🎥 Demo
 
@@ -48,9 +68,12 @@ Let's try [WeatherApp](https://am97veb.github.io/weather-app/)!
 
 ## 📋 Features
 
-- ⛅ **Current weather** - you can find data on the current weather in selected cities, along with a brief description and graphics.
-- 📅☔ **Weather forecast** - you can find data on the maximum and minimum temperatures for the coming days.
-- 💻📱 **Responsive design** - the elements adapt to the screen on which the application is displayed.
+- 🔎 **Search engine** - find any location,
+- ⛅ **Current weather** - information about the current weather in selected cities, along with a brief description and graphics,
+- 📅☔ **Weather forecast** - information about the maximum and minimum temperatures for the coming days,
+- 💻📱 **Responsive design** - the elements adapt to the screen on which the application is displayed,
+-  +/- **Location management** - add and remove from the main screen,
+- 💾 **LocalStorage** - save added cities in local storage
 
 ## ⚙ Installation
 
